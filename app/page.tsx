@@ -8,6 +8,8 @@ import Footer from "./components/Footer";
 import Cursor from "./components/Cursor";
 import ScrollReveal from "./components/ScrollReveal";
 import BackgroundAnimation from "./components/BackgroundAnimation";
+import ProgressBar from "./components/ProgressBar";
+import Loader from "./components/Loader";
 
 export default function Home() {
   return (
@@ -22,6 +24,8 @@ export default function Home() {
       <Cursor />
       <ScrollReveal />
       <BackgroundAnimation />
+      <ProgressBar />
+      <Loader />
     </main>
   );
 }

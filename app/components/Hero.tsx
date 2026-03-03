@@ -1,6 +1,33 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
+const phrases = ["Frontend Dev.", "UI Builder.", "Problem Solver.", "Your Name."];
+
 export default function Hero() {
+  const [displayed, setDisplayed] = useState("");
+  const [phraseIndex, setPhraseIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [deleting, setDeleting] = useState(false);
+
+  useEffect(() => {
+    const current = phrases[phraseIndex];
+    let timeout: ReturnType<typeof setTimeout>;
+
+    if (!deleting && charIndex < current.length) {
+      timeout = setTimeout(() => setCharIndex((c) => c + 1), 80);
+    } else if (!deleting && charIndex === current.length) {
+      timeout = setTimeout(() => setDeleting(true), 1800);
+    } else if (deleting && charIndex > 0) {
+      timeout = setTimeout(() => setCharIndex((c) => c - 1), 40);
+    } else if (deleting && charIndex === 0) {
+      setDeleting(false);
+      setPhraseIndex((p) => (p + 1) % phrases.length);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [charIndex, deleting, phraseIndex]);
+
   return (
     <div
       id="home"
@@ -30,18 +57,26 @@ export default function Hero() {
           Available for opportunities
         </p>
 
-        <h1 className="hero-name" style={{
-          fontSize: "clamp(3.5rem, 9vw, 8rem)", fontWeight: 800,
-          lineHeight: 0.95, letterSpacing: "-0.04em", marginBottom: "1.5rem",
-        }}>
-          Your<br />
+          <h1 className="hero-name" style={{
+            fontSize: "clamp(3.5rem, 9vw, 8rem)", fontWeight: 800,
+            lineHeight: 0.95, letterSpacing: "-0.04em", marginBottom: "1.5rem",
+            minHeight: "clamp(3.5rem, 9vw, 8rem)",
+          }}>
+          I&apos;m a<br />
+          {/* Typing text */}
           <span style={{
             background: "linear-gradient(135deg, #a855f7 0%, #7c3aed 50%, #c084fc 100%)",
             WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
+            display: "inline-block", minWidth: "10px",
           }}>
-            Name
+            {phrases[phraseIndex].substring(0, charIndex)}
+            <span style={{
+              display: "inline-block", width: "4px", height: "0.85em",
+              background: "#a855f7", marginLeft: "4px", verticalAlign: "middle",
+              animation: "glowPulse 0.8s ease-in-out infinite",
+            }} />
           </span><br />
-          <span style={{ WebkitTextStroke: "1px rgba(237,233,254,0.2)", color: "transparent" }}>
+          <span style={{ WebkitTextStroke: "1px rgba(233,213,255,0.2)", color: "transparent" }}>
             Here.
           </span>
         </h1>
