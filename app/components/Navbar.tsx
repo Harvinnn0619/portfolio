@@ -44,7 +44,7 @@ export default function Navbar() {
             fontSize: "1.1rem",
             fontWeight: 800,
             letterSpacing: "-0.02em",
-            color: "#ede9fe",
+            color: "#e9d5ff",
             textDecoration: "none",
           }}
         >
@@ -104,7 +104,7 @@ export default function Navbar() {
             style={{
               width: "24px",
               height: "2px",
-              background: menuOpen ? "#a855f7" : "#ede9fe",
+              background: menuOpen ? "#a855f7" : "#e9d5ff",
               borderRadius: "2px",
               display: "block",
               transition: "all 0.3s",
@@ -117,7 +117,7 @@ export default function Navbar() {
             style={{
               width: "24px",
               height: "2px",
-              background: menuOpen ? "#a855f7" : "#ede9fe",
+              background: menuOpen ? "#a855f7" : "#e9d5ff",
               borderRadius: "2px",
               display: "block",
               transition: "all 0.3s",
@@ -128,7 +128,7 @@ export default function Navbar() {
             style={{
               width: "24px",
               height: "2px",
-              background: menuOpen ? "#a855f7" : "#ede9fe",
+              background: menuOpen ? "#a855f7" : "#e9d5ff",
               borderRadius: "2px",
               display: "block",
               transition: "all 0.3s",
@@ -167,13 +167,13 @@ export default function Navbar() {
               fontSize: "2rem",
               fontWeight: 800,
               letterSpacing: "-0.02em",
-              color: "#ede9fe",
+              color: "#e9d5ff",
               textDecoration: "none",
               transition: `color 0.2s, transform 0.3s ${i * 0.05}s`,
               transform: menuOpen ? "translateY(0)" : "translateY(20px)",
             }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "#a855f7")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "#ede9fe")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "#e9d5ff")}
           >
             {item}
           </a>

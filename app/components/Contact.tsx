@@ -62,7 +62,7 @@ export default function Contact() {
                   onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = "rgba(139,92,246,0.1)"; el.style.borderColor = "rgba(139,92,246,0.3)"; el.style.transform = "translateX(4px)"; }}
                   onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = "rgba(139,92,246,0.04)"; el.style.borderColor = "rgba(139,92,246,0.12)"; el.style.transform = "translateX(0)"; }}
                 >
-                  <span style={{ fontSize: "0.9rem", fontWeight: 700, color: "#ede9fe" }}>{link.label}</span>
+                  <span style={{ fontSize: "0.9rem", fontWeight: 700, color: "#e9d5ff" }}>{link.label}</span>
                   <span style={{ fontFamily: "monospace", fontSize: "0.75rem", color: "#6d6a8a" }}>{link.handle}</span>
                 </a>
               ))}
@@ -90,7 +90,7 @@ export default function Contact() {
                     <input type={field.type} placeholder={field.placeholder}
                       value={form[field.key as keyof typeof form]}
                       onChange={e => setForm({ ...form, [field.key]: e.target.value })}
-                      style={{ width: "100%", background: "transparent", border: "none", outline: "none", fontFamily: "Syne, sans-serif", fontSize: "0.92rem", color: "#ede9fe" }}
+                      style={{ width: "100%", background: "transparent", border: "none", outline: "none", fontFamily: "Syne, sans-serif", fontSize: "0.92rem", color: "#e9d5ff" }}
                     />
                   </div>
                 ))}
@@ -100,7 +100,7 @@ export default function Contact() {
                     value={form.message}
                     onChange={e => setForm({ ...form, message: e.target.value })}
                     rows={4}
-                    style={{ width: "100%", background: "transparent", border: "none", outline: "none", fontFamily: "Syne, sans-serif", fontSize: "0.92rem", color: "#ede9fe", resize: "none" }}
+                    style={{ width: "100%", background: "transparent", border: "none", outline: "none", fontFamily: "Syne, sans-serif", fontSize: "0.92rem", color: "#e9d5ff", resize: "none" }}
                   />
                 </div>
                 <button onClick={handleSubmit} style={{

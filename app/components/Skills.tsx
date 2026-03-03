@@ -54,7 +54,7 @@ export default function Skills() {
               </p>
               <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "0.75rem" }}>
                 {group.skills.map(skill => (
-                  <li key={skill} style={{ fontSize: "0.92rem", fontWeight: 600, display: "flex", alignItems: "center", gap: "0.6rem", color: "#ede9fe" }}>
+                  <li key={skill} style={{ fontSize: "0.92rem", fontWeight: 600, display: "flex", alignItems: "center", gap: "0.6rem", color: "#e9d5ff" }}>
                     <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "linear-gradient(135deg, #a855f7, #7c3aed)", flexShrink: 0, display: "block" }} />
                     {skill}
                   </li>

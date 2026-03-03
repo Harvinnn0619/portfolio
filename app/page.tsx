@@ -7,6 +7,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Cursor from "./components/Cursor";
 import ScrollReveal from "./components/ScrollReveal";
+import BackgroundAnimation from "./components/BackgroundAnimation";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <Footer />
       <Cursor />
       <ScrollReveal />
+      <BackgroundAnimation />
     </main>
   );
 }

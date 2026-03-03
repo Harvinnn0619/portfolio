@@ -40,8 +40,8 @@ export default function About() {
         <div className="reveal reveal-delay-2 mobile-col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "start" }}>
           <div>
             {[
-              <>Hey — I&apos;m a <strong style={{ color: "#ede9fe", fontWeight: 600 }}>frontend developer</strong> based in [Your City]. I&apos;m passionate about creating interfaces that are fast, accessible, and feel great to use.</>,
-              <>Currently studying <strong style={{ color: "#ede9fe", fontWeight: 600 }}>[Your Course / Degree]</strong> and actively looking for <strong style={{ color: "#ede9fe", fontWeight: 600 }}>internship or entry-level opportunities</strong> where I can contribute to real products and grow with a great team.</>,
+              <>Hey — I&apos;m a <strong style={{ color: "#e9d5ff", fontWeight: 600 }}>frontend developer</strong> based in [Your City]. I&apos;m passionate about creating interfaces that are fast, accessible, and feel great to use.</>,
+              <>Currently studying <strong style={{ color: "#e9d5ff", fontWeight: 600 }}>[Your Course / Degree]</strong> and actively looking for <strong style={{ color: "#e9d5ff", fontWeight: 600 }}>internship or entry-level opportunities</strong> where I can contribute to real products and grow with a great team.</>,
               <>When I&apos;m not coding, you&apos;ll find me [something personal — reading, gaming, photography, etc.].</>,
             ].map((text, i) => (
               <p key={i} style={{ fontFamily: "monospace", fontSize: "0.88rem", color: "#6d6a8a", lineHeight: 1.9, marginBottom: "1.25rem" }}>{text}</p>

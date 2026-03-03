@@ -65,7 +65,7 @@ export default function Projects() {
               }}
             >
               <p style={{ fontFamily: "monospace", fontSize: "0.65rem", color: "#4a4568", letterSpacing: "0.1em", marginBottom: "1.5rem" }}>{p.num}</p>
-              <h3 style={{ fontSize: "1.3rem", fontWeight: 700, letterSpacing: "-0.02em", marginBottom: "0.75rem", color: "#ede9fe" }}>{p.title}</h3>
+              <h3 style={{ fontSize: "1.3rem", fontWeight: 700, letterSpacing: "-0.02em", marginBottom: "0.75rem", color: "#e9d5ff" }}>{p.title}</h3>
               <p style={{ fontFamily: "monospace", fontSize: "0.8rem", color: "#6d6a8a", lineHeight: 1.7, marginBottom: "1.5rem" }}>{p.desc}</p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginBottom: "1.5rem" }}>
                 {p.tags.map(tag => (
