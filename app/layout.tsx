@@ -8,7 +8,7 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  title: "Your Name — Portfolio",
+  title: "Harvin De Los Reyes",
   description: "Frontend developer portfolio",
 };
 

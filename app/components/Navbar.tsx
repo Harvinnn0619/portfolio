@@ -46,7 +46,7 @@ export default function Navbar() {
         transition: "all 0.3s",
       }}>
         <a href="#home" style={{ fontSize: "1.1rem", fontWeight: 800, letterSpacing: "-0.02em", color: "#e9d5ff", textDecoration: "none" }}>
-          dev<span style={{ color: "#a855f7" }}>.</span>
+          vin<span style={{ color: "#a855f7" }}>.</span>
         </a>
 
         {/* Desktop links */}
@@ -100,30 +100,48 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile menu */}
-      <div style={{
-        position: "fixed", inset: 0, zIndex: 90,
-        background: "rgba(13,13,20,0.97)", backdropFilter: "blur(20px)",
-        display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-        gap: "2.5rem",
-        opacity: menuOpen ? 1 : 0,
-        pointerEvents: menuOpen ? "all" : "none",
-        transition: "opacity 0.3s ease",
-      }}>
+      
+            {/* Mobile modal menu */}
+      <div
+        style={{
+          position: "fixed", top: "4.5rem", right: "1rem",
+          zIndex: 90, minWidth: "200px",
+          background: "rgba(13,13,20,0.95)",
+          backdropFilter: "blur(20px)",
+          border: "1px solid rgba(139,92,246,0.2)",
+          borderRadius: "12px",
+          padding: menuOpen ? "1rem" : "0",
+          overflow: "hidden",
+          maxHeight: menuOpen ? "400px" : "0px",
+          opacity: menuOpen ? 1 : 0,
+          boxShadow: menuOpen ? "0 16px 40px rgba(139,92,246,0.2)" : "none",
+          transition: "max-height 0.35s cubic-bezier(0.22,1,0.36,1), opacity 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease",
+          pointerEvents: menuOpen ? "all" : "none",
+        }}
+      >
         {navItems.map((item, i) => (
           <a
             key={item}
             href={`#${item.toLowerCase()}`}
             onClick={closeMenu}
             style={{
-              fontSize: "2rem", fontWeight: 800, letterSpacing: "-0.02em",
+              display: "block", padding: "0.75rem 1rem",
+              fontSize: "0.9rem", fontWeight: 700,
               color: active === item ? "#a855f7" : "#e9d5ff",
-              textDecoration: "none",
-              transition: `color 0.2s, transform 0.3s ${i * 0.05}s`,
-              transform: menuOpen ? "translateY(0)" : "translateY(20px)",
+              textDecoration: "none", borderRadius: "8px",
+              transition: "background 0.2s, color 0.2s",
+              transitionDelay: `${i * 0.04}s`,
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "#a855f7")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = active === item ? "#a855f7" : "#e9d5ff")}
+            onMouseEnter={e => {
+              const el = e.currentTarget as HTMLElement;
+              el.style.background = "rgba(139,92,246,0.15)";
+              el.style.color = "#a855f7";
+            }}
+            onMouseLeave={e => {
+              const el = e.currentTarget as HTMLElement;
+              el.style.background = "transparent";
+              el.style.color = active === item ? "#a855f7" : "#e9d5ff";
+            }}
           >
             {item}
           </a>

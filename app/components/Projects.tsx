@@ -19,12 +19,25 @@ export default function Projects() {
           entry.target.querySelectorAll(".reveal").forEach((el, i) => {
             setTimeout(() => el.classList.add("visible"), i * 120);
           });
+        } else {
+          entry.target.querySelectorAll(".reveal").forEach((el) => {
+            el.classList.remove("visible");
+          });
         }
       });
     }, { threshold: 0.1 });
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    card.style.setProperty("--mouse-x", `${x}px`);
+    card.style.setProperty("--mouse-y", `${y}px`);
+  };
 
   return (
     <>
@@ -41,24 +54,24 @@ export default function Projects() {
           {projects.map((p, i) => (
             <div
               key={p.num}
-              className={`reveal reveal-delay-${i + 1}`}
+              className={`project-card reveal reveal-delay-${i + 1}`}
+              onMouseMove={handleMouseMove}
               style={{
+                position: "relative", overflow: "hidden",
                 background: "rgba(139,92,246,0.04)",
                 border: "1px solid rgba(139,92,246,0.12)",
                 borderRadius: "12px", padding: "2.5rem",
-                transition: "background 0.3s, border-color 0.3s, transform 0.3s, box-shadow 0.3s",
+                transition: "border-color 0.3s, transform 0.3s, box-shadow 0.3s",
                 cursor: "none",
               }}
               onMouseEnter={e => {
                 const el = e.currentTarget as HTMLElement;
-                el.style.background = "rgba(139,92,246,0.08)";
-                el.style.borderColor = "rgba(139,92,246,0.3)";
-                el.style.transform = "translateY(-4px)";
-                el.style.boxShadow = "0 16px 40px rgba(139,92,246,0.12)";
+                el.style.borderColor = "rgba(139,92,246,0.4)";
+                el.style.transform = "translateY(-6px)";
+                el.style.boxShadow = "0 20px 60px rgba(139,92,246,0.15), 0 0 0 1px rgba(139,92,246,0.1)";
               }}
               onMouseLeave={e => {
                 const el = e.currentTarget as HTMLElement;
-                el.style.background = "rgba(139,92,246,0.04)";
                 el.style.borderColor = "rgba(139,92,246,0.12)";
                 el.style.transform = "translateY(0)";
                 el.style.boxShadow = "none";

@@ -13,7 +13,7 @@ export default function BackgroundAnimation() {
           y: [0, -30, 20, 0],
           scale: [1, 1.1, 0.95, 1],
         }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         style={{
           position: "absolute", top: "-10%", left: "-5%",
           width: "600px", height: "600px", borderRadius: "50%",
@@ -28,7 +28,7 @@ export default function BackgroundAnimation() {
           y: [0, 40, -20, 0],
           scale: [1, 0.9, 1.15, 1],
         }}
-        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         style={{
           position: "absolute", top: "5%", right: "-5%",
           width: "500px", height: "500px", borderRadius: "50%",
@@ -43,7 +43,7 @@ export default function BackgroundAnimation() {
           y: [0, -50, 30, 0],
           scale: [1, 1.2, 0.9, 1],
         }}
-        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut", delay: 4 }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         style={{
           position: "absolute", top: "40%", left: "40%",
           width: "350px", height: "350px", borderRadius: "50%",
@@ -58,7 +58,7 @@ export default function BackgroundAnimation() {
           y: [0, -40, 20, 0],
           scale: [1, 1.05, 0.95, 1],
         }}
-        transition={{ duration: 16, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5}}
         style={{
           position: "absolute", bottom: "0%", left: "10%",
           width: "450px", height: "450px", borderRadius: "50%",
@@ -73,7 +73,7 @@ export default function BackgroundAnimation() {
           y: [0, 30, -40, 0],
           scale: [1, 0.95, 1.1, 1],
         }}
-        transition={{ duration: 22, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
         style={{
           position: "absolute", bottom: "10%", right: "5%",
           width: "400px", height: "400px", borderRadius: "50%",

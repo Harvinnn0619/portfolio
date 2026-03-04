@@ -3,8 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 
 const links = [
-  { label: "Email", handle: "you@email.com", href: "mailto:you@email.com" },
-  { label: "GitHub", handle: "@yourhandle", href: "#" },
+  { label: "Email", handle: "delosreyes.harvin@gmail.com", href: "mailto:delosreyes.harvin@email.com" },
+  { label: "GitHub", handle: "@Harvinnn0619", href: "#" },
   { label: "LinkedIn", handle: "in/yourname", href: "#" },
   { label: "Resume", handle: "Download PDF →", href: "#" },
 ];
@@ -49,7 +49,7 @@ export default function Contact() {
           {/* Links */}
           <div>
             <p style={{ fontFamily: "monospace", fontSize: "0.88rem", color: "#6d6a8a", lineHeight: 1.9, marginBottom: "2.5rem" }}>
-              Open to internship and entry-level roles. Whether you have a position, a project, or just want to connect — my inbox is open.
+              Open to entry-level roles. Whether you have a position, a project, or just want to connect — my inbox is open.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
               {links.map(link => (
@@ -82,8 +82,8 @@ export default function Contact() {
             ) : (
               <div style={{ display: "flex", flexDirection: "column" }}>
                 {[
-                  { label: "Name", key: "name", type: "text", placeholder: "Jane Smith" },
-                  { label: "Email", key: "email", type: "email", placeholder: "jane@company.com" },
+                  { label: "Name", key: "name", type: "text", placeholder: "Shiena Mae Escala" },
+                  { label: "Email", key: "email", type: "email", placeholder: "shienamaeescala392@gmail.com" },
                 ].map(field => (
                   <div key={field.key} style={{ padding: "1rem 1.5rem", borderBottom: "1px solid rgba(139,92,246,0.12)" }}>
                     <label style={{ display: "block", fontFamily: "monospace", fontSize: "0.65rem", letterSpacing: "0.1em", color: "#6d6a8a", textTransform: "uppercase", marginBottom: "0.4rem" }}>{field.label}</label>

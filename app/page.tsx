@@ -10,10 +10,14 @@ import ScrollReveal from "./components/ScrollReveal";
 import BackgroundAnimation from "./components/BackgroundAnimation";
 import ProgressBar from "./components/ProgressBar";
 import Loader from "./components/Loader";
+import SocialSideBar from "./components/SocialSideBar";
+import BackToTop from "./components/BackToTop";
+
 
 export default function Home() {
   return (
     <main>
+      <Loader />
       <Navbar />
       <Hero />
       <Projects />
@@ -25,7 +29,8 @@ export default function Home() {
       <ScrollReveal />
       <BackgroundAnimation />
       <ProgressBar />
-      <Loader />
+      <SocialSideBar />
+      <BackToTop />
     </main>
   );
 }

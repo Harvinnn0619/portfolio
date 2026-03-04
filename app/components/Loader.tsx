@@ -21,7 +21,8 @@ export default function Loader() {
             position: "fixed", inset: 0, zIndex: 9999,
             background: "#0d0d14",
             display: "flex", flexDirection: "column",
-            alignItems: "center", justifyContent: "center", gap: "2rem",
+            alignItems: "center", justifyContent: "center",
+            gap: "2rem",
           }}
         >
           {/* Logo */}
@@ -31,7 +32,7 @@ export default function Loader() {
             transition={{ duration: 0.5 }}
             style={{ fontSize: "2rem", fontWeight: 800, letterSpacing: "-0.04em", color: "#e9d5ff" }}
           >
-            dev<span style={{ color: "#a855f7" }}>.</span>
+            vin<span style={{ color: "#a855f7" }}>.</span>
           </motion.p>
 
           {/* Loading bar */}
