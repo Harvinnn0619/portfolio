@@ -23,7 +23,7 @@ export default function Cursor() {
         id="cursor"
         style={{
           width: "10px", height: "10px",
-          background: "#c8f542",
+          background: "#57C785",
           borderRadius: "50%",
           position: "fixed", top: 0, left: 0,
           pointerEvents: "none",
@@ -35,7 +35,7 @@ export default function Cursor() {
         id="cursor-ring"
         style={{
           width: "36px", height: "36px",
-          border: "1px solid rgba(200,245,66,0.4)",
+          border: "1px solid rgba(87,199,133,0.4)",
           borderRadius: "50%",
           position: "fixed", top: 0, left: 0,
           pointerEvents: "none",

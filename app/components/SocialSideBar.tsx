@@ -23,7 +23,7 @@ const socials = [
   },
   {
     label: "Email",
-    href: "mailto:you@email.com",
+    href: "mailto:delosreyes.harvin@gmail.com",
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -42,14 +42,16 @@ export default function SocialSidebar() {
   }, []);
 
   return (
-    <div style={{
-      position: "fixed", left: "1.5rem", bottom: "30%",
-      zIndex: 50, display: "flex", flexDirection: "column",
-      alignItems: "center", gap: "0.75rem",
-      opacity: visible ? 1 : 0, transform: visible ? "translateX(0)" : "translateX(-20px)",
-      transition: "opacity 0.6s, transform 0.6s",
-    }}
+    <div
       className="hide-mobile"
+      style={{
+        position: "fixed", left: "1.5rem", bottom: "30%",
+        zIndex: 50, display: "flex", flexDirection: "column",
+        alignItems: "center", gap: "0.75rem",
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateX(0)" : "translateX(-20px)",
+        transition: "opacity 0.6s, transform 0.6s",
+      }}
     >
       {socials.map((s) => (
         <a
@@ -59,24 +61,24 @@ export default function SocialSidebar() {
           style={{
             width: "38px", height: "38px", borderRadius: "8px",
             display: "flex", alignItems: "center", justifyContent: "center",
-            background: "rgba(139,92,246,0.08)",
-            border: "1px solid rgba(139,92,246,0.15)",
-            color: "#6d6a8a", textDecoration: "none",
+            background: "rgba(59,8,64,0.2)",
+            border: "1px solid rgba(113,111,168,0.2)",
+            color: "#716FA8", textDecoration: "none",
             transition: "all 0.25s",
           }}
           onMouseEnter={e => {
             const el = e.currentTarget as HTMLElement;
-            el.style.background = "rgba(139,92,246,0.2)";
-            el.style.borderColor = "#a855f7";
-            el.style.color = "#a855f7";
-            el.style.boxShadow = "0 0 16px rgba(168,85,247,0.4)";
+            el.style.background = "rgba(87,199,133,0.15)";
+            el.style.borderColor = "#57C785";
+            el.style.color = "#57C785";
+            el.style.boxShadow = "0 0 16px rgba(87,199,133,0.4)";
             el.style.transform = "translateX(4px)";
           }}
           onMouseLeave={e => {
             const el = e.currentTarget as HTMLElement;
-            el.style.background = "rgba(139,92,246,0.08)";
-            el.style.borderColor = "rgba(139,92,246,0.15)";
-            el.style.color = "#6d6a8a";
+            el.style.background = "rgba(59,8,64,0.2)";
+            el.style.borderColor = "rgba(113,111,168,0.2)";
+            el.style.color = "#716FA8";
             el.style.boxShadow = "none";
             el.style.transform = "translateX(0)";
           }}
@@ -84,8 +86,7 @@ export default function SocialSidebar() {
           {s.icon}
         </a>
       ))}
-      {/* Line below */}
-      <div style={{ width: "1px", height: "60px", background: "linear-gradient(to bottom, rgba(139,92,246,0.4), transparent)" }} />
+      <div style={{ width: "1px", height: "60px", background: "linear-gradient(to bottom, rgba(87,199,133,0.4), transparent)" }} />
     </div>
   );
 }

@@ -7,17 +7,18 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: #0d0d14;
-  color: #e9d5ff;
+  background: #252742;
+  color: #ffffff;
   font-family: 'Syne', sans-serif;
   line-height: 1.6;
   cursor: none;
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
 /* ── CUSTOM CURSOR ── */
 #cursor {
   width: 10px; height: 10px;
-  background: #a855f7;
+  background: #57C785;
   border-radius: 50%;
   position: fixed; top: 0; left: 0;
   pointer-events: none;
@@ -27,7 +28,7 @@ body {
 }
 #cursor-ring {
   width: 36px; height: 36px;
-  border: 1px solid rgba(168, 85, 247, 0.5);
+  border: 1px solid rgba(87, 199, 133, 0.5);
   border-radius: 50%;
   position: fixed; top: 0; left: 0;
   pointer-events: none;
@@ -42,8 +43,8 @@ body:has(button:hover) #cursor-ring {
 
 /* ── SCROLLBAR ── */
 ::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #0d0d14; }
-::-webkit-scrollbar-thumb { background: #2d1f4e; border-radius: 2px; }
+::-webkit-scrollbar-track { background: #252742; }
+::-webkit-scrollbar-thumb { background: #716FA8; border-radius: 2px; }
 
 /* ── GRAIN OVERLAY ── */
 body::before {
@@ -58,8 +59,8 @@ body::after {
   content: '';
   position: fixed; inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 20% 10%, rgba(139, 92, 246, 0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 80% 80%, rgba(168, 85, 247, 0.08) 0%, transparent 60%);
+    radial-gradient(ellipse 80% 60% at 20% 10%, rgba(59, 8, 64, 0.3) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 80%, rgba(87, 199, 133, 0.08) 0%, transparent 60%);
   pointer-events: none;
   z-index: 0;
 }
@@ -70,7 +71,7 @@ body::after {
   position: absolute; inset: 0; border-radius: 12px;
   background: radial-gradient(
     300px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(168, 85, 247, 0.12), transparent 70%
+    rgba(87, 199, 133, 0.1), transparent 70%
   );
   opacity: 0; transition: opacity 0.3s;
 }

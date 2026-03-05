@@ -13,7 +13,6 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
 
-      // Detect active section
       const sections = navItems.map((item) => ({
         id: item.toLowerCase(),
         el: document.getElementById(item.toLowerCase()),
@@ -40,13 +39,13 @@ export default function Navbar() {
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
         padding: "1.5rem 2rem",
         display: "flex", alignItems: "center", justifyContent: "space-between",
-        borderBottom: scrolled ? "1px solid rgba(139,92,246,0.15)" : "1px solid transparent",
-        background: scrolled ? "rgba(13,13,20,0.85)" : "transparent",
+        borderBottom: scrolled ? "1px solid rgba(113,111,168,0.2)" : "1px solid transparent",
+        background: scrolled ? "rgba(37,39,66,0.85)" : "transparent",
         backdropFilter: scrolled ? "blur(20px)" : "none",
         transition: "all 0.3s",
       }}>
-        <a href="#home" style={{ fontSize: "1.1rem", fontWeight: 800, letterSpacing: "-0.02em", color: "#e9d5ff", textDecoration: "none" }}>
-          vin<span style={{ color: "#a855f7" }}>.</span>
+        <a href="#home" style={{ fontSize: "1.1rem", fontWeight: 800, letterSpacing: "-0.02em", color: "#ffffff", textDecoration: "none" }}>
+          vin<span style={{ color: "#57C785" }}>.</span>
         </a>
 
         {/* Desktop links */}
@@ -55,26 +54,25 @@ export default function Navbar() {
             const isActive = active === item;
             return (
               <li key={item}>
-                
-                <a href={`#${item.toLowerCase()}`}
+                <a
+                  href={`#${item.toLowerCase()}`}
                   style={{
                     fontFamily: "monospace", fontSize: "0.75rem",
                     letterSpacing: "0.08em", textDecoration: "none",
                     textTransform: "uppercase", transition: "color 0.2s",
-                    color: isActive ? "#a855f7" : "#4a4568",
+                    color: isActive ? "#57C785" : "#716FA8",
                     position: "relative", paddingBottom: "4px",
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "#a855f7")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = isActive ? "#a855f7" : "#4a4568")}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "#57C785")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = isActive ? "#57C785" : "#716FA8")}
                 >
                   {item}
-                  {/* Active underline */}
                   {isActive && (
                     <span style={{
                       position: "absolute", bottom: 0, left: 0, right: 0,
                       height: "1px",
-                      background: "linear-gradient(to right, #7c3aed, #a855f7)",
-                      boxShadow: "0 0 6px rgba(168,85,247,0.8)",
+                      background: "linear-gradient(to right, #3B0840, #57C785)",
+                      boxShadow: "0 0 6px rgba(87,199,133,0.6)",
                     }} />
                   )}
                 </a>
@@ -94,27 +92,26 @@ export default function Navbar() {
             cursor: "pointer", padding: "4px", zIndex: 200,
           }}
         >
-          <span style={{ width: "24px", height: "2px", background: menuOpen ? "#a855f7" : "#e9d5ff", borderRadius: "2px", display: "block", transition: "all 0.3s", transform: menuOpen ? "rotate(45deg) translate(5px, 5px)" : "none" }} />
-          <span style={{ width: "24px", height: "2px", background: menuOpen ? "#a855f7" : "#e9d5ff", borderRadius: "2px", display: "block", transition: "all 0.3s", opacity: menuOpen ? 0 : 1 }} />
-          <span style={{ width: "24px", height: "2px", background: menuOpen ? "#a855f7" : "#e9d5ff", borderRadius: "2px", display: "block", transition: "all 0.3s", transform: menuOpen ? "rotate(-45deg) translate(5px, -5px)" : "none" }} />
+          <span style={{ width: "24px", height: "2px", background: menuOpen ? "#57C785" : "#ffffff", borderRadius: "2px", display: "block", transition: "all 0.3s", transform: menuOpen ? "rotate(45deg) translate(5px, 5px)" : "none" }} />
+          <span style={{ width: "24px", height: "2px", background: menuOpen ? "#57C785" : "#ffffff", borderRadius: "2px", display: "block", transition: "all 0.3s", opacity: menuOpen ? 0 : 1 }} />
+          <span style={{ width: "24px", height: "2px", background: menuOpen ? "#57C785" : "#ffffff", borderRadius: "2px", display: "block", transition: "all 0.3s", transform: menuOpen ? "rotate(-45deg) translate(5px, -5px)" : "none" }} />
         </button>
       </nav>
 
-      
-            {/* Mobile modal menu */}
+      {/* Mobile modal menu */}
       <div
         style={{
           position: "fixed", top: "4.5rem", right: "1rem",
           zIndex: 90, minWidth: "200px",
-          background: "rgba(13,13,20,0.95)",
+          background: "rgba(37,39,66,0.97)",
           backdropFilter: "blur(20px)",
-          border: "1px solid rgba(139,92,246,0.2)",
+          border: "1px solid rgba(113,111,168,0.2)",
           borderRadius: "12px",
           padding: menuOpen ? "1rem" : "0",
           overflow: "hidden",
           maxHeight: menuOpen ? "400px" : "0px",
           opacity: menuOpen ? 1 : 0,
-          boxShadow: menuOpen ? "0 16px 40px rgba(139,92,246,0.2)" : "none",
+          boxShadow: menuOpen ? "0 16px 40px rgba(59,8,64,0.3)" : "none",
           transition: "max-height 0.35s cubic-bezier(0.22,1,0.36,1), opacity 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease",
           pointerEvents: menuOpen ? "all" : "none",
         }}
@@ -127,20 +124,20 @@ export default function Navbar() {
             style={{
               display: "block", padding: "0.75rem 1rem",
               fontSize: "0.9rem", fontWeight: 700,
-              color: active === item ? "#a855f7" : "#e9d5ff",
+              color: active === item ? "#57C785" : "#ffffff",
               textDecoration: "none", borderRadius: "8px",
               transition: "background 0.2s, color 0.2s",
               transitionDelay: `${i * 0.04}s`,
             }}
             onMouseEnter={e => {
               const el = e.currentTarget as HTMLElement;
-              el.style.background = "rgba(139,92,246,0.15)";
-              el.style.color = "#a855f7";
+              el.style.background = "rgba(87,199,133,0.1)";
+              el.style.color = "#57C785";
             }}
             onMouseLeave={e => {
               const el = e.currentTarget as HTMLElement;
               el.style.background = "transparent";
-              el.style.color = active === item ? "#a855f7" : "#e9d5ff";
+              el.style.color = active === item ? "#57C785" : "#ffffff";
             }}
           >
             {item}
